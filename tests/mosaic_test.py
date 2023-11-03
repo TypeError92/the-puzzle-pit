@@ -89,8 +89,13 @@ class TestMosaicInputValidation:
     pass
 
 
-class TestMosaicFunctionality:
-    pass
+class TestMosaicSolve:
+    """Should return the correct solution for an easy 5 x 5 puzzle."""
+    def test_mosaic_solve_00(self):
+        clues, solution = easy_5x5
+        mosaic = Mosaic(clues)
+        assert mosaic.solve() == solution
+
 
 
 class TestTile:
