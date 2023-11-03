@@ -17,6 +17,22 @@ easy_5x5 = (
     ]
 )
 
+hard_5x5 = (
+    [
+        [3, -1, -1, -1, -1],
+        [-1, -1, 5, -1, 3],
+        [-1, -1, 6, 4, -1],
+        [5, -1, 4, -1, 1],
+        [4, -1, 2, 1, -1]
+    ],
+    [
+        [1, 0, 0, 0, 1],
+        [1, 1, 1, 1, 1],
+        [0, 1, 1, 0, 0],
+        [1, 1, 0, 0, 0],
+        [1, 1, 0, 0, 1]
+    ]
+)
 
 class TestMosaicInit:
     def test_mosaic_init_00(self):
@@ -90,12 +106,17 @@ class TestMosaicInputValidation:
 
 
 class TestMosaicSolve:
-    """Should return the correct solution for an easy 5 x 5 puzzle."""
     def test_mosaic_solve_00(self):
+        """Should return the correct solution for an easy 5 x 5 puzzle."""
         clues, solution = easy_5x5
         mosaic = Mosaic(clues)
         assert mosaic.solve() == solution
 
+    def test_mosaic_solve_01(self):
+        """Should return the correct solution for a hard 5 x 5 puzzle."""
+        clues, solution = hard_5x5
+        mosaic = Mosaic(clues)
+        assert mosaic.solve() == solution
 
 
 class TestTile:
