@@ -1,0 +1,2 @@
+class Mosaic:
+    pass
