@@ -1,2 +1,3 @@
 class Mosaic:
-    pass
+    def __init__(self, clues):
+        pass
